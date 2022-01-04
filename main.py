@@ -1,7 +1,7 @@
 # -----------------------------------------------------------
 # Project for Phython class "Aliens Attack"
 #
-# (C) 2015 Edson De Carvalho, Paris, France
+# Edson De Carvalho, Paris, France
 #
 # email edson-kennedy.de_carvalho_pedro@edu.devinci.fr
 # -----------------------------------------------------------
