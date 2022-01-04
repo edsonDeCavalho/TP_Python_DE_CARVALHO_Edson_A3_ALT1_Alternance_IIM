@@ -23,12 +23,13 @@ class MouvementManager :
             #print(f"|Game|>>> No colision in time {timeObject}")
             return False
 
-    def checkColisionBetweenAlienandMissil(self,aliens,missils):
+    def checkColisionBetweenAlienandMissil(self,aliens,missils,gc):
         for missil in missils:
             for alien in aliens:
                 if self.subCheckColisionBetweenAlienAndMissil(alien,missil) :
                     alien.die()
                     missil.selfDestruction()
+                    gc.incrementScore()
 
 
     def subCheckColisionBetweenAlienAndMissil(self,alien,missil):

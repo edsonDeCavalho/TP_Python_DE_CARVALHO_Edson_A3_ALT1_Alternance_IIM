@@ -19,8 +19,8 @@ class MissilsManager:
         for missil in missils :
             if missil.isDestroyed():
                 missils.remove(missil)
-            if missil.isGone():
-                missils.remove(missil)
+            #if missil.isGone():
+                #missils.remove(missil)
     def checkIfMissilsIsGone(self, missils):
         for missil in missils:
             if (missil.y < 1):

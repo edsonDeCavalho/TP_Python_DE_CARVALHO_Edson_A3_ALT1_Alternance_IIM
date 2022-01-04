@@ -12,8 +12,7 @@ from Utils import Utils
 from SapaceShipManager import SapaceShipManager
 from Missil import Missil
 from MissilsManager import MissilsManager
-from tkinter import *
-from tkinter import ttk
+from DisplayManager import DisplayManager
 
 
 
@@ -36,13 +35,19 @@ gameCharacteristics=GameCharacteristics(GameParameters.DEFAULT_NUMBER_OF_ALIENS,
 #Game objects variables
 aircraft=SapaceShip(GameParameters.DEFAULT_POSITION_X,GameParameters.DEFAULT_POSITION_Y,"Edson")
 movementManager=MouvementManager(gameCharacteristics.timeOfAlienMouvement)
+
+
 aliens = []
 missils = []
 actualAlienId=0
+
+#Creation of the classes who manage evry data object
+
 spaceShipManager=SapaceShipManager()
 utils=Utils()
 aliensMananager=AliensManager()
 missilsManager=MissilsManager()
+displayManager=DisplayManager()
 
 #Charge of images
 alienImage = pygame.image.load(GameParameters.ALIEN_IMAGE_PATH)
@@ -50,14 +55,12 @@ spaceShipImage = pygame.image.load(GameParameters.SPACESHIP_IMAGE_PATH)
 missilImage=pygame.image.load(GameParameters.MISSIL_IMAGE_PATH)
 background=pygame.image.load(GameParameters.WiNDOW_BACKGROUND_IMAGE_PATH)
 
-root = Tk()
-root.protocol("WM_DELETE_WINDOW", True)
-main_dialog = Tk.Frame(root)
-main_dialog.pack()
+
+
+
 
 #Drawing Missils
 def drawMissils():
-
     for i in range(len(missils)):
         #pygame.draw.circle(screen, GameParameters.BROWN, (missils[i].x, missils[i].y), 10)
         screen.blit(missilImage, (missils[i].x, missils[i].y))
@@ -73,13 +76,12 @@ def drawSpaceShip():
 #Draw the grid in the screen
 def drawGrid():
     screen.fill(GameParameters.BLACK)
-
     for x in range(0, GameParameters.WINDOW_WIDTH, GameParameters.BLOCK_SIZE):
         for y in range(0,GameParameters.WINDOW_HEIGHT, GameParameters.BLOCK_SIZE):
             rect = pygame.Rect(x, y, GameParameters.BLOCK_SIZE, GameParameters.BLOCK_SIZE)
             pygame.draw.rect(screen, GameParameters.BLACK, rect, 1)
-    screen.blit(background, [0, 0])
-#Initialises the screen
+
+#Initialises the screenggg
 def init(ndAliens):
     global screen,clock,actualAlienId
     pygame.init()
@@ -91,15 +93,21 @@ def init(ndAliens):
         alien = Alien(actualAlienId,utils.getRandomNuMberForXPosition(), 1)
         aliens.append(alien)
         actualAlienId += 1
+
 #drawAliens()
 init(gameCharacteristics.numberOfAliens)
 drawGrid()
 while loop:
     #Call of the drawing fonctions:
     drawGrid()
+    screen.blit(background, [0, 0])
+    #Display of text
+    displayManager.displayTitle(screen, background)
+    displayManager.displayScore(screen,aircraft,gameCharacteristics)
     drawAliens()
     drawSpaceShip()
     drawMissils()
+
     for event in pygame.event.get():
         # event input Keyboard and call for mouvement
         if event.type == pygame.KEYDOWN:
@@ -123,7 +131,7 @@ while loop:
     #Check aliens colision
     movementManager.checkColisionBetweenAlienAndSapaceShip(aircraft, aliens)
     #Check collision between aliens and missils
-    movementManager.checkColisionBetweenAlienandMissil(aliens,missils)
+    movementManager.checkColisionBetweenAlienandMissil(aliens,missils,gameCharacteristics)
     #check if a alien is gone or dead
     aliensMananager.checkIfAlienIsGone(aliens)
     #Checking if a lien is gone
@@ -144,8 +152,8 @@ while loop:
     if aircraft.isDead():
         pygame.quit()
 
+
 #vide le cache
 pygame.quit()
-main_dialog.destroy()
 
 

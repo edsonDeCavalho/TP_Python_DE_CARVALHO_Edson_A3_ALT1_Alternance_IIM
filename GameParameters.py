@@ -17,7 +17,7 @@ class GameParameters :
     WINDOW_HEIGHT = 500
     WINDOW_WIDTH = 1000
     BLOCK_SIZE=30
-    WiNDOW_BACKGROUND_IMAGE_PATH = r'C:\Users\EdsonDeCarvalho\PycharmProjects\pythonProject2\img\background.jpg'
+    WiNDOW_BACKGROUND_IMAGE_PATH = './img/background.jpg'
 
 
     #Aircraft
@@ -25,15 +25,15 @@ class GameParameters :
     DEFAULT_POSITION_X=241
     DEFAULT_POSITION_Y=451
     SAPACESHIP_SIZE=20
-    SPACESHIP_IMAGE_PATH=r'C:\Users\EdsonDeCarvalho\PycharmProjects\pythonProject2\img\spaceship.png'
+    SPACESHIP_IMAGE_PATH='./img/spaceship.png'
 
 
     #Alien
 
     ALIEN_SIZE=20
     DEFAULT_NEW_ALIENS_BY_FRAME=2
-    ALIEN_IMAGE_PATH=r'C:\Users\EdsonDeCarvalho\PycharmProjects\pythonProject2\img\alien.png'
+    ALIEN_IMAGE_PATH='./img/alien.png'
 
     #Missil
 
-    MISSIL_IMAGE_PATH=r'C:\Users\EdsonDeCarvalho\PycharmProjects\pythonProject2\img\missil.png'
+    MISSIL_IMAGE_PATH='./img/missil.png'
