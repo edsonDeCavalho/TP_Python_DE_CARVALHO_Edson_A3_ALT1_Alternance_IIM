@@ -1,3 +1,10 @@
+# -----------------------------------------------------------
+# This class manage the collisisions in the game
+# email edson-kennedy.de_carvalho_pedro@edu.devinci.fr
+# -----------------------------------------------------------
+
+
+
 from SpaceShip import SapaceShip
 from Alien import Alien
 from GameParameters import GameParameters

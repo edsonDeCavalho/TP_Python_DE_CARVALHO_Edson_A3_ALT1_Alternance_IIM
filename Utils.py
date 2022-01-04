@@ -1,4 +1,8 @@
-#Class whith utils fonctions
+# -----------------------------------------------------------
+# This class have different types of methods to make little process
+# and calculus
+# email edson-kennedy.de_carvalho_pedro@edu.devinci.fr
+# -----------------------------------------------------------
 import random
 from GameParameters import GameParameters
 from Alien import Alien

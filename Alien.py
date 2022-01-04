@@ -1,3 +1,7 @@
+# -----------------------------------------------------------
+# This class represents an Alien
+# email edson-kennedy.de_carvalho_pedro@edu.devinci.fr
+# -----------------------------------------------------------
 from GameParameters import GameParameters
 class Alien:
     def __init__(self,id,x,y):

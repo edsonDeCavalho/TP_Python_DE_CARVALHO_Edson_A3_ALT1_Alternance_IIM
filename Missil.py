@@ -1,3 +1,8 @@
+# -----------------------------------------------------------
+# This class represents a Missil
+# email edson-kennedy.de_carvalho_pedro@edu.devinci.fr
+# -----------------------------------------------------------
+
 from GameParameters import GameParameters
 #This class represents a missile
 class Missil:

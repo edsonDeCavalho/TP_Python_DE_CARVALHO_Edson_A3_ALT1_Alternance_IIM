@@ -31,6 +31,7 @@ The spaceship is able to move up , move down , move to right and to move to the 
 ** To move to the right -> d
 ** To move to the left  -> q
 ** To send a missil     -> g
+** To exit the game     -> j
 ``` 
 
 ## To run the game ***

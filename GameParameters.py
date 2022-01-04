@@ -1,3 +1,8 @@
+# -----------------------------------------------------------
+# Her you will find all of the parametters that the game run's whit
+# email edson-kennedy.de_carvalho_pedro@edu.devinci.fr
+# -----------------------------------------------------------
+
 class GameParameters :
 
     #GENERAL

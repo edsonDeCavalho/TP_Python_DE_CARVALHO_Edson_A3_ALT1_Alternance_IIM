@@ -1,3 +1,7 @@
+# -----------------------------------------------------------
+# This class represents a Spaceship
+# email edson-kennedy.de_carvalho_pedro@edu.devinci.fr
+# -----------------------------------------------------------
 from GameParameters import GameParameters
 class SapaceShip :
     def __init__(self,x,y,name):

@@ -1,3 +1,8 @@
+# -----------------------------------------------------------
+# This class mangage the missils objects
+# email edson-kennedy.de_carvalho_pedro@edu.devinci.fr
+# -----------------------------------------------------------
+
 from SpaceShip import SapaceShip
 from Missil import Missil
 from GameParameters import GameParameters

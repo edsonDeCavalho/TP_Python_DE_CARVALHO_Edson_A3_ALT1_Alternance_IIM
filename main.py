@@ -1,3 +1,11 @@
+# -----------------------------------------------------------
+# Project for Phython class "Aliens Attack"
+#
+# (C) 2015 Edson De Carvalho, Paris, France
+#
+# email edson-kennedy.de_carvalho_pedro@edu.devinci.fr
+# -----------------------------------------------------------
+
 import time
 import pygame
 import random
@@ -16,7 +24,7 @@ from DisplayManager import DisplayManager
 
 
 
-#EXO5
+
 #Window variables:
 
 #verifie si tout les modules sont charges
@@ -29,14 +37,11 @@ pygame.display.set_caption("Space Fighter 3000")
 gameCharacteristics=GameCharacteristics(GameParameters.DEFAULT_NUMBER_OF_ALIENS,GameParameters.DEFAULT_TIME_OF_ALIENS_MOUVEMENT);
 
 
-
-
-
 #Game objects variables
 aircraft=SapaceShip(GameParameters.DEFAULT_POSITION_X,GameParameters.DEFAULT_POSITION_Y,"Edson")
 movementManager=MouvementManager(gameCharacteristics.timeOfAlienMouvement)
 
-
+#Storage of aliens and Missils
 aliens = []
 missils = []
 actualAlienId=0
@@ -55,7 +60,8 @@ spaceShipImage = pygame.image.load(GameParameters.SPACESHIP_IMAGE_PATH)
 missilImage=pygame.image.load(GameParameters.MISSIL_IMAGE_PATH)
 background=pygame.image.load(GameParameters.WiNDOW_BACKGROUND_IMAGE_PATH)
 
-
+#Booleans to control the diffrent lunch of the game
+step1=True
 
 
 
@@ -99,6 +105,7 @@ init(gameCharacteristics.numberOfAliens)
 drawGrid()
 while loop:
     #Call of the drawing fonctions:
+
     drawGrid()
     screen.blit(background, [0, 0])
     #Display of text
@@ -109,7 +116,7 @@ while loop:
     drawMissils()
 
     for event in pygame.event.get():
-        # event input Keyboard and call for mouvement
+        #event input Keyboard and call for mouvement or another action
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_j:
                 loop = False
@@ -125,6 +132,7 @@ while loop:
                 spaceShipManager.moveToDownSpaceSHip(aircraft)
             if event.key == pygame.K_g:
                 missilsManager.creationOfAMissil(aircraft,missils)
+
 
     #creation of Aliens
     aliensMananager.createAliens(aliens,actualAlienId)
@@ -147,6 +155,7 @@ while loop:
     #print stats of the last Frame
     #utils.printStats(aliens,aircraft)
     pygame.display.flip()
+    #Settig the frame clock
     clock.tick(GameParameters.DEFAULT_FRAME_BY_SECOND)
 
     if aircraft.isDead():
@@ -154,6 +163,7 @@ while loop:
 
 
 #vide le cache
+
 pygame.quit()
 
 
